@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" X-Frame-Options="SAMEORIGIN" X-Frame-Options: SAMEORIGIN X-Content-Type-Options="nosniff" X-Content-Type-Options: nosniff >
+
+  <style>
+    body{
+      width: auto!important; overflow-x: hidden!important
+    }
+  </style>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>MBDEX</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body class="body">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+          <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+              <a href="index.html"><strong style="font-size: 3vh; color:blue;">MBDEX</strong>
+              </a>
+            </li>
+            <br>
+            <li>
+              <a href="index.html">Dashboard Swap</a>
+            </li>
+            <li>
+              <a href="About EcoDex.html">About Us</a>
+            </li>
+            <li>
+              <a href="https://moonblast.gitbook.io/moonblast-token-investor-pack/">Whitepaper</a>
+            </li>
+            <li>
+              <a href="http://www.moonblast.live">MoonBlast.Live</a>
+            </li>
+            <li>
+              <a href="https://moonblast.gitbook.io/moonblast-token-investor-pack/ecosystem-and-revenues/moonblast-partnerships">Partners</a>
+            </li>
+            <li>
+              <a href="https://t.me/MoonblastToken">Project 1</a>
+            </li>
+            <li>
+              <a href="https://discord.gg/FwejUGr4sT">Project 2</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+      
+        <!-- Page Content -->
+        <div class="top-connect" style="text-align: center">
+          <button type="button" class="btn-wallet" id="top-connect-wallet-button">Connect Wallet</button>
+      </div>
+      <div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="ethereum-coin1 dropdown show">
+              </a>
+          </div>
+      </div>
+</nav>
+<div class="main-boby">
+
+  <div class="tab-content " id="pills-tabContent">
+      <div class="swap-container tab-pane fade show active" id="pills-swap" role="tabpanel"
+          aria-labelledby="pills-swap-tab" >
+
+          <div class="swap-contents" >
+              <div class="card swap-contents-card" style="bottom: 90px; width: 50vh">
+                  <div class="swap-head card-header">
+                      Swap
+                  </div>
+                  <div class="card-body" style="padding: 0.25rem">
+                      <div class="card-input input-group">
+                          <div class="input-card-top input-eth">
+                              <input type="text" value="" placeholder="0.0" class="form-control"
+                                  aria-label="Text input with dropdown button" id="from-amount">
+                              <div class="dropdown">
+                                  <button class="btn dropdown-toggle" type="button" data-toggle="modal"
+                                      data-target="#modal-token" aria-haspopup="true" aria-expanded="false" id="from-token-selected">
+                                      <a class="token-image" id="token-default-img"></a>
+                                      <img class="token-image" id="from-token-img">
+                                      <span id="from-token-text"></span>
+
+                                  </button>
+
+                                  <div class="modal fade" id="modal-token" tabindex="-1" role="dialog"
+                                      aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="eth-search-modal modal-dialog" role="document">
+                                          <div class="eth-search-modal modal-content">
+                                              <div class="modal-header">
+                                                  <h5 class="modal-title" id="exampleModalLabel">Select a
+                                                      token</h5>
+                                                  <button type="button" class="close" data-dismiss="modal"
+                                                      aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                  </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                  <div class="modal-search">
+                                                      <input type="text" id="search-input" placeholder="Search name" onkeyup="filterFunction()">
+                                                  </div>
+                                                  <hr class="line-divider">
+                                                  <div class="all-coin" id="all-coin-list" style="color: white">
+                                                  </div>
+                                              </div>
+
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                          </div>
+
+                          <div class="input-card-top">
+                              <input type="text" value="" class="form-control"
+                                  aria-label="Text input with dropdown button" id="to-amount" disabled>
+                              <div class="dropdown">
+                                  <button class="btn btn-primary dropdown-toggle" type="button"
+                                      data-toggle="modal" data-target="#modal-token" aria-haspopup="true"
+                                      aria-expanded="false" id="to-token-selected">
+                                      <span id="select-token-text">select a token</span>
+                                      <img class="token-image" id="to-token-img">
+                                      <span id="to-token-text"></span>
+                                  </button>
+                              </div>
+                              
+                          </div>
+                          <label for="customRange" style="font-size:2vh; color: white">Slippage (<span id="rangeVal">3</span>)</label>
+                          <input type="range" class="custom-range" id="customRange" name="points1" min="1" max="25" value="3" oninput="showdays()" style="float: right">
+                          </div>
+                          <br>
+                          <div>Estimated Gas: <span id="gas-estimate"></span></div>
+                      </div>
+                      <button type="button" class="connect-wallet-down" id="main-connect-wallet-button">
+                          Connect Wallet
+                      </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+            
+            <A href="https://www.moonblast.live/">
+          <video href="https://www.moonblast.live/" class="container" style="text-align: center;
+          background-color: rgb(25, 27, 31);
+          width: fit-content;
+          padding: 1px;
+          border-radius: 20px;
+          display: grid;
+          grid-auto-flow: column;
+          gap: 10px;
+          overflow: auto;
+          -webkit-box-align: center;
+          align-items: center; bottom: 150vw; width: 45vmax;" autoplay muted loop>
+            <source href="https://www.moonblast.live/" src="img/Untitled (468 × 60px) (7).mp4" type="video/mp4">
+            <source href="https://www.moonblast.live/" src="img/Untitled (468 × 60px) (7).mp4" type="video/ogg">
+            
+          </video>
+          </a>
+
+          </div>
+          
+
+                
+    </div>
+                <!-- /#wrapper -->
+                
+                <!-- Optional JavaScript -->
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+          <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+          <script src="./script.js"></script>
+
+
+    </body>
+</html>
