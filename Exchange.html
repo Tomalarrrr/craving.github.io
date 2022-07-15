@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Dashboard</title>
+    <title>MBDEX</title>
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
@@ -95,36 +95,101 @@
           </div>
         </div>
         <div class="top-connect" style="text-align: center">
-          <button style= "color: rgba(255, 255, 255, 0); background-color: #007bff00; position: absolute; left: -200px" id="top-connect-wallet-button">C</button>
+          <button type="button" class="btn-wallet" id="top-connect-wallet-button">Connect Wallet</button>
+      </div>
+      <div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="ethereum-coin1 dropdown show">
+              </a>
+          </div>
       </div>
     </nav>
-          <div class="main-boby" style="margin-top: 35px">
-          <button  style= "color: rgba(255, 255, 255, 0); background-color: #007bff00; position: absolute;"
-                id="from-token-selected">
-          </button>
-          <button style= "color: rgba(255, 255, 255, 0); background-color: #007bff00; position: absolute;"
-               id="to-token-selected">
-          </button>
-            <button style= "color: rgba(255, 255, 255, 0); background-color: #007bff00; position: absolute;"   id="main-connect-wallet-button">
-            </button>            
-          <div class="card-input input-group" style="width: 98%; text-align: center; top:50px">
-            <div class="input-card-top input-eth" style="display: block;">
-          <ul class="l-main-content main-content" style="padding: 2vw">
-            <li class="l-section section section--is-active" style="display: block; color: white;">
-                  <p><strong style="font-size: 7.5vh; color:#007bff;">Welcome to the Dashboard</strong></p>
-                    <p><strong style="font-size: 2.25vh; color:#ffffff;">Here we highlight major events within the MoonBlast Network</strong></p>
-                        <p><strong style="font-size: 2.25vh; color:#ffffff;">Announcement:  MoonBlast Project<br>launching in:</strong></p>
-          <div id="countdown"> 
-            <a href="https://linktr.ee/moonblast">
-            <ul>
-            <li style="display: inline-block; font-size: 1.0em; list-style-type: none; padding: 1em; text-transform: uppercase; color:#ffffff;"><span style="display: block; font-size: 2.7rem;" id="days"></span>Days</li>
-            <li style="display: inline-block; font-size: 1.0em; list-style-type: none; padding: 1em; text-transform: uppercase; color:#ffffff"><span style="display: block; font-size: 2.7rem;" id="hours"></span>Hours</li>
-            <li style="display: inline-block; font-size: 1.0em; list-style-type: none; padding: 1em; text-transform: uppercase; color:#ffffff"><span style="display: block; font-size: 2.7rem;" id="minutes"></span>Mins</li>
-            <li style="display: inline-block; font-size: 1.0em; list-style-type: none; padding: 1em; text-transform: uppercase; color:#007bff"><span style="display: block; font-size: 2.7rem;" id="seconds"></span>Seconds</li>
-            </ul>    
-            </a>
-        </div>
+    <div class="main-boby">
 
+      <div class="tab-content " id="pills-tabContent">
+      <div class="swap-container tab-pane fade show active" id="pills-swap" role="tabpanel"
+          aria-labelledby="pills-swap-tab" >
+
+          <div class="swap-contents" >
+              <div class="card swap-contents-card" style="bottom: 90px; width: 50vh">
+                  <div class="swap-head card-header">
+                      Swap
+                  </div>
+                  <div class="card-body" style="padding: 0.25rem">
+                      <div class="card-input input-group">
+                          <div class="input-card-top input-eth">
+                              <input type="text" value="" placeholder="0.0" class="form-control"
+                                  aria-label="Text input with dropdown button" id="from-amount">
+                              <div class="dropdown">
+                                  <button class="btn dropdown-toggle" type="button" data-toggle="modal"
+                                      data-target="#modal-token" aria-haspopup="true" aria-expanded="false" id="from-token-selected">
+                                      <a class="token-image" id="token-default-img"></a>
+                                      <img class="token-image" id="from-token-img">
+                                      <span id="from-token-text"></span>
+
+                                  </button>
+
+                                  <div class="modal fade" id="modal-token" tabindex="-1" role="dialog"
+                                      aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="eth-search-modal modal-dialog" role="document">
+                                          <div class="eth-search-modal modal-content">
+                                              <div class="modal-header">
+                                                  <h5 class="modal-title" id="exampleModalLabel">Select a
+                                                      token</h5>
+                                                  <button type="button" class="close" data-dismiss="modal"
+                                                      aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                  </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                  <div class="modal-search">
+                                                      <input type="text" id="search-input" placeholder="Search name" onkeyup="filterFunction()">
+                                                  </div>
+                                                  <hr class="line-divider">
+                                                  <div class="all-coin" id="all-coin-list" style="color: white">
+                                                  </div>
+                                              </div>
+
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                          </div>
+
+                          <div class="input-card-top">
+                              <input type="text" value="" class="form-control"
+                                  aria-label="Text input with dropdown button" id="to-amount" disabled>
+                              <div class="dropdown">
+                                  <button class="btn btn-primary dropdown-toggle" type="button"
+                                      data-toggle="modal" data-target="#modal-token" aria-haspopup="true"
+                                      aria-expanded="false" id="to-token-selected">
+                                      <span id="select-token-text">select a token</span>
+                                      <img class="token-image" id="to-token-img">
+                                      <span id="to-token-text"></span>
+                                  </button>
+                              </div>
+                              
+                          </div>
+                          <label for="customRange" style="font-size:2vh; color: white">Slippage (<span id="rangeVal">3</span>)</label>
+                          <input type="range" class="custom-range" id="customRange" name="points1" min="1" max="25" value="3" oninput="showdays()" style="float: right">
+                          </div>
+                          <br>
+                          <div>Estimated Gas: <span id="gas-estimate"></span></div>
+                      </div>
+                      <button type="button" class="connect-wallet-down" id="main-connect-wallet-button">
+                          Connect Wallet
+                      </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+            
             <A href="https://www.moonblast.live/">
           <video href="https://www.moonblast.live/" class="container" style="text-align: center;
           background-color: rgb(25, 27, 31);
@@ -164,34 +229,6 @@
           <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
           <script src="./script.js"></script>
 
-          <script>
-            (function () {
-            const second = 1000,
-            minute = second * 60,
-            hour = minute * 60,
-            day = hour * 24;
-            year = day * 365
-            var now = new Date("Aug 2, 2022 19:00:00").getTime();
-            let countDown = new Date("Aug 2, 2022 19:00:00").getTime() + 0 * 60000,	 	  
-            x = setInterval(function() {    
-            let now = new Date().getTime(),
-                distance = countDown - now;
-                document.getElementById("days").innerText = Math.floor((distance % (year)) / (day)),
-                document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-                document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-                document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
-            if (distance < 0) {
-                countdown = document.getElementById("countdown"),
-                countdown.style.display = "block";
-                document.getElementById("days").innerText = "0";
-                document.getElementById("hours").innerText = "0";
-                document.getElementById("minutes").innerText = "0";
-                document.getElementById("seconds").innerText = "0";
-                clearInterval(x);
-            }
-            }, 0)
-            }());
-            </Script>
-          
+
     </body>
 </html>
