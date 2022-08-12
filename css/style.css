@@ -852,12 +852,12 @@ ol {
 }
 
 .shop__option {
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 
 .shop__option__search form {
   border: 1px solid #e1e1e1;
-  height: 46px;
+  height: 45px;
   position: relative;
 }
 .shop__option__search form .nice-select {
@@ -865,8 +865,8 @@ ol {
   background: transparent;
   display: inline-block;
   width: 25%;
-  height: 44px;
-  line-height: 44px;
+  height: 45px;
+  line-height: 45px;
   padding-left: 30px;
   border-radius: 0;
   Float: left;
@@ -1053,7 +1053,7 @@ ol {
   color: #ffffff;
   background: #f45a51;
   padding: 6px 10px 4px;
-  border-radius: 4px;
+  border-radius: 20px;
 }
 .product__details__text h4 {
   color: #111111;
@@ -1300,10 +1300,9 @@ ol {
   font-size: 18px;
   display: inline-block;
   color: #111111;
-  height: 40px;
-  width: 40px;
-  background: #f2f2f2;
-  border-radius: 50%;
+  height: 2px;
+  width: 20px;
+  background: #f35b51;
   line-height: 38px;
   text-align: center;
 }
@@ -1371,7 +1370,7 @@ ol {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background: #111111;
+  background: #f35b51;
   padding: 0 30px;
   border: none;
   position: absolute;
@@ -1381,7 +1380,7 @@ ol {
 }
 
 .cart__total {
-  background: #fdf3ea;
+  background: #fdf3ea00;
   padding: 35px 40px 40px;
 }
 .cart__total h6 {
@@ -1403,7 +1402,7 @@ ol {
 }
 .cart__total ul li span {
   font-weight: 600;
-  color: #e26b0c;
+  color: #f35b51;
   float: right;
 }
 .cart__total .primary-btn {
@@ -3310,4 +3309,100 @@ ol, ul {
   display: block;
   margin: 40px auto 80px auto;
   font-size: 1.75em;
+}
+
+
+/*FAQ*/
+.faq-container {
+  margin: 0 auto;
+  padding: 4rem;
+  width: 58vmax;
+  margin-bottom: 3.5em;
+}
+
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+.accordion .accordion-item button[aria-expanded="true"] {
+  border-bottom: 1px solid #4d5974;
+}
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #7288a2;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+.accordion button:hover, .accordion button:focus {
+  cursor: pointer;
+  color: #4d5974;
+}
+.accordion button:hover::after, .accordion button:focus::after {
+  cursor: pointer;
+  color: #4d5974;
+  border: 1px solid #4d5974;
+}
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+.accordion button .faq-icon {
+  color: #f45a51;
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+.accordion button .faq-icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .faq-icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.accordion button[aria-expanded=true] {
+  color: #4d5974;
+}
+.accordion button[aria-expanded=true] .faq-icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded=true] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
 }
