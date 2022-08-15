@@ -1,0 +1,9 @@
+User-agent: *
+disallow: 
+
+sitemap: https://www.cravingcake.co.uk/sitemap.xml
+
+<head>
+<meta name=”robots” content=”nofollow”>
+<meta name=”robots” content=”noindex,nofollow”>
+</head>
