@@ -1018,7 +1018,7 @@ ol {
   Product Details
 -----------------------*/
 .product-details {
-  padding-top: 90px;
+  padding-top: 50px;
   padding-bottom: 0;
 }
 
@@ -1034,7 +1034,7 @@ ol {
 }
 
 .product__details__thumb {
-  height: 440px;
+  height: 365px;
   float: left;
   width: 16%;
   overflow: hidden;
@@ -1145,7 +1145,7 @@ ol {
 }
 
 .product__details__tab {
-  padding-top: 85px;
+  padding-top: 40px;
 }
 .product__details__tab .nav-tabs {
   border-bottom: 1px solid #e1e1e1;
@@ -2205,7 +2205,9 @@ ol {
   }
 
   .header__top__right {
-    display: contents;
+    display: grid;
+    width: 35px;
+    margin-top: -89px;
   }
 
   .header__logo {
@@ -3669,7 +3671,7 @@ h1 {
 
 body article {
   width: 100%;
-  max-width: 1000px;
+  padding: 50px;
 }
 body article header {
   display: flex;
@@ -3677,7 +3679,7 @@ body article header {
   justify-content: space-between;
   width: 100%;
   min-height: 400px;
-  padding: 50px;
+  padding: 20px;
   border-radius: 16px;
   color: #fff;
   background-position: center;
@@ -3954,3 +3956,70 @@ Underline:hover:after{
   width: 32%;
 }
 
+.buttons {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  display: block;
+  position: relative;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid #444;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 10;
+  color: #333;
+  font-size: x-small;
+}
+
+.buttons:hover {
+  color: #fff;
+}
+
+.buttons:after {
+    position: absolute !important;
+  content: "";
+  width: 42px;
+  height: 42px;
+  display: block;
+  position: relative;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  right: 2px;
+  top: 2px;
+  background-color: #f25b51;
+  visibility: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  opacity: 1\9;
+  visibility: visible\9;
+  display: none\9;
+  -moz-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -webkit-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  z-index: -1;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.buttons:hover:after {
+  visibility: visible;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  display: block\9;
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
