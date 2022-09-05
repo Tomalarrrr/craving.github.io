@@ -4023,3 +4023,58 @@ Underline:hover:after{
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
 }
+
+
+/*Front page text roller*/
+@import url(https://fonts.googleapis.com/css?family=Lato:600);
+.rotating-text {
+  font-family: Lato, sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: white;
+  transform: translateX(-80px);
+}
+.rotating-text p {
+  display: inline-flex;
+  margin: 0;
+  vertical-align: top;
+}
+.rotating-text p .word {
+  position: absolute;
+  display: flex;
+  opacity: 0;
+  text-transform: lowercase;
+}
+.rotating-text p .word .letter {
+  transform-origin: center center 25px;
+}
+.rotating-text p .word .letter.out {
+  transform: rotateX(90deg);
+  transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+}
+.rotating-text p .word .letter.in {
+  transition: 0.38s ease;
+}
+.rotating-text p .word .letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.alizarin {
+  color: #000000;
+}
+
+.wisteria {
+  color: #000000;
+}
+
+.peter-river {
+  color: #000000;
+}
+
+.emerald {
+  color: #000000;
+}
+
+.sun-flower {
+  color: #000000;
+}
