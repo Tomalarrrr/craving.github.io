@@ -1,3 +1,7 @@
+
+document.cookie = "cookies=none";
+document.cookie = "sameSite=strict";
+
 var shown = 0;
 
 var height = 0;
