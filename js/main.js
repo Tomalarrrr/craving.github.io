@@ -1,5 +1,9 @@
 'use strict';
 
+
+document.cookie = "cookies=none";
+document.cookie = "sameSite=strict";
+
 (function ($) {
 
             "use strict";
